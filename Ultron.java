@@ -1,6 +1,7 @@
 package Ultron;
 import robocode.*;
-//import java.awt.Color;
+
+import java.awt.Color;
 
 // API help : https://robocode.sourceforge.io/docs/robocode/robocode/Robot.html
 
@@ -9,12 +10,15 @@ import robocode.*;
  */
 public class Ultron extends Robot
 {
+    
+	
 	/**
 	 * run: Ultron's default behavior
 	 */
 	public void run() {
 		// Initialization of the robot should be put here
-
+		setColors(Color.gray,Color.orange,Color.red);  
+        
 		// After trying out your robot, try uncommenting the import at the top,
 		// and the next line:
 
