@@ -19,6 +19,13 @@ public class Ultron extends Robot
 		// Initialization of the robot should be put here
 		setColors(Color.gray,Color.orange,Color.red);  
         
+
+@Override
+public void onScannedRobot(ScannedRobotEvent event) {
+    double absoluteBearing = getHeadingRadians() + event.getBearingRadians();
+    double enemyX = getX() + Math.sin(absoluteBearing) * event.getDistance();
+    double enemyY = getY() + Math.cos(absoluteBearing) * event.getDistance();
+}
 		// After trying out your robot, try uncommenting the import at the top,
 		// and the next line:
 
@@ -39,7 +46,7 @@ public class Ultron extends Robot
 	 */
 	public void onScannedRobot(ScannedRobotEvent e) {
 		// Replace the next line with any behavior you would like
-		fire(1);
+		fire(3);
 	}
 
 	/**
