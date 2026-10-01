@@ -20,12 +20,7 @@ public class Ultron extends Robot
 		setColors(Color.gray,Color.orange,Color.red);  
         
 
-@Override
-public void onScannedRobot(ScannedRobotEvent event) {
-    double absoluteBearing = getHeadingRadians() + event.getBearingRadians();
-    double enemyX = getX() + Math.sin(absoluteBearing) * event.getDistance();
-    double enemyY = getY() + Math.cos(absoluteBearing) * event.getDistance();
-}
+
 		// After trying out your robot, try uncommenting the import at the top,
 		// and the next line:
 
