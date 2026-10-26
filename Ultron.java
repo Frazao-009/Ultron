@@ -13,30 +13,16 @@ public class Ultron extends AdvancedRobot
 	public void run() {
 		setColors(Color.gray,Color.orange,Color.red);  
 
-	//Ativa a busca por alvos se não encontrar um alvo por muito tempo
-	 if (turnos_depois_visao > TURNOS_SEM_VISAO) {
-                setTurnRadarRightRadians(Double.POSITIVE_INFINITY);
-            }
-		turnos_depois_visao++;
+	//Serve para "deslinkar" o radar do resto do tanque
+	setAdjustRadarForRobotTurn(true);
+	while(true){
+		//Ativa a busca por alvos se não encontrar um alvo por muito tempo
+	 	if (turnos_depois_visao > TURNOS_SEM_VISAO) {
+                	setTurnRadarRightRadians(Double.POSITIVE_INFINITY);
+            	}
+			turnos_depois_visao++;
 
-
-		// Movimentação placeholder
-		Boolean mov = true;
-		while(mov = true) {
-			ahead(100);
-			turnRight(50);
-			ahead(75);
-			turnLeft(25);
-			mov = false;
-		}
-		while(mov = false) {
-			back(75);
-			turnRight(25);
-			ahead(25);
-			turnLeft(75);
-			back(25);
-			mov = true;
-		}
+			execute();
 	}
 
 
@@ -57,13 +43,13 @@ public class Ultron extends AdvancedRobot
 	
 
 	public void onHitByBullet(HitByBulletEvent e) {
-		back(75);
+		setBack(75);
 	}
 	
 
 	public void onHitWall(HitWallEvent e) {
-		back(150);
-		turnRight(90);
-		ahead(100);
+		setBack(150);
+		setTurnRight(90);
+		setAhead(100);
 	}	
 }
