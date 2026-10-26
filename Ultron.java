@@ -7,10 +7,8 @@ public class Ultron extends Robot
 {
 	public void run() {
 		setColors(Color.gray,Color.orange,Color.red);  
-		Boolean procurar = true;
-	while(procurar = true){
-		turnRadarRight(360);
-	}
+
+	turnRadarRightRadians(Double.POSITIVE_INFINITY);
 
 		// Movimentação placeholder
 		Boolean mov = true;
