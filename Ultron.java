@@ -7,8 +7,10 @@ public class Ultron extends Robot
 {
 	public void run() {
 		setColors(Color.gray,Color.orange,Color.red);  
-
-		setTurnRadarLeft(Double.POSITIVE_INFINITY);
+		Boolean procurar = true;
+	while(procurar = true){
+		turnRadarRight(360);
+	}
 
 		// Movimentação placeholder
 		Boolean mov = true;
@@ -32,9 +34,9 @@ public class Ultron extends Robot
 
 	public void onScannedRobot(ScannedRobotEvent e) {
 	//Calcula a posição atual do inimigo
-    double anguloabsoluto= getHeadingRadians() + event.getBearingRadians();
-    double XEn = getX() + Math.sin(anguloabsoluto) * event.getDistance();
-    double YEn = getY() + Math.cos(anguloabsoluto) * event.getDistance();
+    double anguloabsoluto= Math.toRadians(getHeading()) + e.getBearingRadians();
+    double XInimigo = getX() + Math.sin(anguloabsoluto) * e.getDistance();
+    double YInimigo = getY() + Math.cos(anguloabsoluto) * e.getDistance();
 	}
 
 	
