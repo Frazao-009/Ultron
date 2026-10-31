@@ -24,7 +24,7 @@ public class Ultron extends AdvancedRobot
 
 			execute();
 	}
-
+	}
 
 	public void onScannedRobot(ScannedRobotEvent e) {
 
