@@ -21,7 +21,7 @@ public class Ultron extends AdvancedRobot
 	setAdjustRadarForRobotTurn(true);
 	while(true){
 		Afastar();
-		 setAhead(100);
+		
 		//Ativa a busca por alvos se não encontrar um alvo por muito tempo
 	 	if (turnos_depois_visao > TURNOS_SEM_VISAO) {
                 	setTurnRadarRightRadians(Double.POSITIVE_INFINITY);
@@ -44,6 +44,10 @@ public class Ultron extends AdvancedRobot
         double virarScan = Utils.normalRelativeAngle(anguloabsoluto - getRadarHeadingRadians());
         double afrente = Math.copySign(AFRENTE, virarScan);
         setTurnRadarRightRadians(virarScan + afrente);
+
+
+      
+
 	}
 
 	
@@ -58,18 +62,26 @@ public class Ultron extends AdvancedRobot
 		setTurnRight(90);
 		setAhead(100);
 	}	
-	// vinicius de amanhã (no caso sabado) fazer o if para o largura e quando chegar perto voltar ao centro.
+	
 	//tentar fazer o ultron andar em zig zag	
 	public void Afastar()
 {
-if(getY() > getBattleFieldHeight() - 100)
-{
+    if(getY() > getBattleFieldHeight() - 100)
+     {
+   setTurnRight(180);
+     }
 
-	setBodyColor(Color.RED);
+
+    if(getY() > getBattleFieldWidth() - 100)
+        {
+        setTurnRight(180);
+        }
+     
+		
 }
 
-}
 
 }
+
 
 
