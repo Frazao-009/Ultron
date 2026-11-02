@@ -21,7 +21,7 @@ public class Ultron extends AdvancedRobot
 	setAdjustRadarForRobotTurn(true);
 	while(true){
 		Afastar();
-		A();
+		Movimentacao();
 
 		//Ativa a busca por alvos se não encontrar um alvo por muito tempo
 	 	if (turnos_depois_visao > TURNOS_SEM_VISAO) {
@@ -81,7 +81,7 @@ public class Ultron extends AdvancedRobot
 		
 }
 
-public void A(){
+public void Movimentacao(){
 	setAhead(100);
 	setTurnRight(180);
 }
