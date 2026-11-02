@@ -21,7 +21,8 @@ public class Ultron extends AdvancedRobot
 	setAdjustRadarForRobotTurn(true);
 	while(true){
 		Afastar();
-		
+		A();
+
 		//Ativa a busca por alvos se não encontrar um alvo por muito tempo
 	 	if (turnos_depois_visao > TURNOS_SEM_VISAO) {
                 	setTurnRadarRightRadians(Double.POSITIVE_INFINITY);
@@ -45,7 +46,7 @@ public class Ultron extends AdvancedRobot
         double afrente = Math.copySign(AFRENTE, virarScan);
         setTurnRadarRightRadians(virarScan + afrente);
 
-
+     
       
 
 	}
@@ -66,18 +67,23 @@ public class Ultron extends AdvancedRobot
 	//tentar fazer o ultron andar em zig zag	
 	public void Afastar()
 {
-    if(getY() > getBattleFieldHeight() - 100)
+    if(getY() > getBattleFieldHeight() - 200)
      {
    setTurnRight(180);
      }
 
 
-    if(getY() > getBattleFieldWidth() - 100)
+    if(getY() > getBattleFieldWidth() - 200)
         {
         setTurnRight(180);
         }
      
 		
+}
+
+public void A(){
+	setAhead(100);
+	setTurnRight(180);
 }
 
 
